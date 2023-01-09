@@ -1,0 +1,57 @@
+git config --global --list
+git config --global user.name //设置GitHub昵称
+git config --global user.email //设置GitHub邮箱
+
+git add //将本地文件添加到暂存区   working directory -> stage(index)
+git commit //将暂存区文件添加到本地仓库  stage(index) -> history(respository)
+git push //将本地仓库文件添加到远程仓库  history(respository) -> remote directory
+ 
+git pull //将远程创库拉取到本地仓库 remote directory ->history(respository)
+git reset //将代码从仓库回滚到暂存区 history(respository) ->stage(index)
+git checkout //将代码从暂存区放回本地
+
+
+搭建本地仓库
+    初始化创库 git init
+
+不初始化直接克隆仓库
+    git clone [url]
+
+
+
+Untracked：未跟踪，文件夹在文件中，没有加入git仓库，不参与版本控制，可以通过git add将状态变为Staged
+Unmodify：文件未入库，未修改，可以修改变成modify状态，使用git rm移出版本库，成为untracked文件
+modified：文件已修改，仅仅是修改，可以通过git add可进入暂存staged状态，git checkout 丢弃修改，返回到unmodify状态
+staged：暂存状态，执行git commit则将修改的同步到库中，此时文件与本地文件变为一致，文件为unmodify状态
+        执行git reset HEAD filename取消暂存，文件变为modified
+
+git status 查看本地工作区文件状态
+git commit -m "" 提交暂存区文件到本地仓库 -m(备注信息)
+
+忽略文件
+在主目录下创建".gitignore"文件，语法规则
+'#'号开头的会被忽略
+'*'开头表示任意字符
+'?'表示一个字符
+'[abc]'表示可选字符范围
+'{sting1,string2}'表示可选字符串
+'!'
+......
+
+
+ssh-keygen -t rsa  (-t)加密，rsa 加密方式
+生成文件id_rsa.pub,id_rsa   .pub为公钥
+
+
+git branch  查看分支
+git branch -r 查看远程分支
+git branch [branch—name] 新建分支 但仍停留在当前分支
+git checkout -b 切换到该分支
+git merge [branch] 合并指定分支到当前分支
+
+git branch -d [branch—name] 删除本地分支
+
+删除远程分支
+git push origin --delete [branch—name]
+git branch -dr [remote/branch]
+
