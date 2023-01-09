@@ -17,6 +17,7 @@ git checkout //将代码从暂存区放回本地
 不初始化直接克隆仓库
     git clone [url]
 
+git push -u origin main 提交远程仓库
 
 
 Untracked：未跟踪，文件夹在文件中，没有加入git仓库，不参与版本控制，可以通过git add将状态变为Staged
